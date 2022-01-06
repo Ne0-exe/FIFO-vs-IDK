@@ -8,7 +8,7 @@ counter = 0
 while counter < 100:
     var = []
     for i in range(100):
-        var.append(random.randint(1,21))
+        var.append(random.randint(1,20))
     lst = []
     for i in range(100):
         lst.append(var[i])
