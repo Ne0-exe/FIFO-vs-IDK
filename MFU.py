@@ -15,34 +15,34 @@ for lists in list_of_lists:  # lists - n-ty ciąg zawierajacy 100 losowo wybrany
     frame = []  # tablica ramki danego ciagu
     used = {}
     for c in range(20):
-        used[c+1] = 0
+        used[c+1] = 0 # tablica użyć stron
     for i in range(len(lists)):
         is_missing = True
         if i == 0:
             frame.append(lists[i])
             missing += 1
             used[lists[i]] += 1
-            print("dodalem 1 do strony numer", lists[i])
+            #print("dodalem 1 do strony numer", lists[i])
         else:
             if len(frame) < R:
                 for a in range(len(frame)):
                     if lists[i] == frame[a]:
                         is_missing = False
                         used[lists[i]] += 1
-                        print("dodalem 1 do strony numer", lists[i])
+                        #print("dodalem 1 do strony numer", lists[i])
                         break
                 if is_missing:
                     needed = lists[i]
                     missing += 1
                     used[needed] += 1
-                    print("dodalem 1 do strony numer", needed)
+                    #print("dodalem 1 do strony numer", needed)
                     frame.append(needed)
             else:
                 for a in range(len(frame)):
                     if lists[i] == frame[a]:
                         is_missing = False
                         used[lists[i]] += 1
-                        print("dodalem 1 do strony numer", lists[i])
+                        #print("dodalem 1 do strony numer", lists[i])
                         break
                 if is_missing:
                     missing += 1
@@ -56,7 +56,7 @@ for lists in list_of_lists:  # lists - n-ty ciąg zawierajacy 100 losowo wybrany
                             continue
                     frame.insert(index, most)
                     used[most] += 1
-                    print("dodalem 1 do strony numer", most)
+                    #print("dodalem 1 do strony numer", most)
                     needed = lists[i]
                     frame.append(needed)
     average_missing += missing
